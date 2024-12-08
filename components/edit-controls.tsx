@@ -1,54 +1,57 @@
-'use client'
+"use client"
 
 import { useState } from 'react'
-import { useRouter } from 'next/navigation'
-import { Slider } from "@/components/ui/slider"
-import { Button } from "@/components/ui/button"
-import { Label } from "@/components/ui/label"
 
 export function EditControls({ id }: { id: string }) {
   const [brightness, setBrightness] = useState(100)
   const [contrast, setContrast] = useState(100)
-  const router = useRouter()
 
-  const handleSave = async () => {
+  const handleProcess = async () => {
     const response = await fetch('/api/process', {
       method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
+      headers: {
+        'Content-Type': 'application /json',
+      },
       body: JSON.stringify({ id, brightness, contrast }),
     })
 
     if (response.ok) {
-      router.push(`/result/${id}`)
+      // Redirect to the result page after processing
+      const { success } = await response.json()
+      if (success) {
+        window.location.href = `/result/${id}`
+      }
+    } else {
+      console.error('Error processing image')
+      // Handle error (e.g., show error message to user)
     }
   }
 
   return (
-    <div className="space-y-6">
-      <div className="space-y-2">
-        <Label htmlFor="brightness">Brightness</Label>
-        <Slider
-          id="brightness"
-          min={0}
-          max={200}
-          step={1}
-          value={[brightness]}
-          onValueChange={(value) => setBrightness(value[0])}
+    <div className="flex flex-col space-y-4">
+      <label>
+        Brightness:
+        <input
+          type="range"
+          min="0"
+          max="200"
+          value={brightness}
+          onChange={(e) => setBrightness(Number(e.target.value))}
         />
-      </div>
-      <div className="space-y-2">
-        <Label htmlFor="contrast">Contrast</Label>
-        <Slider
-          id="contrast"
-          min={0}
-          max={200}
-          step={1}
-          value={[contrast]}
-          onValueChange={(value) => setContrast(value[0])}
+      </label>
+      <label>
+        Contrast:
+        <input
+          type="range"
+          min="0"
+          max="200"
+          value={contrast}
+          onChange={(e) => setContrast(Number(e.target.value))}
         />
-      </div>
-      <Button onClick={handleSave} className="w-full">Save Changes</Button>
+      </label>
+      <button onClick={handleProcess} className="btn">
+        Process Image
+      </button>
     </div>
   )
 }
-

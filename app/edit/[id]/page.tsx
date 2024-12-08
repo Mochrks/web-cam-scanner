@@ -1,3 +1,4 @@
+
 import Image from 'next/image'
 import { EditControls } from '@/components/edit-controls'
 
@@ -24,4 +25,3 @@ export default function EditPage({ params }: { params: { id: string } }) {
     </div>
   )
 }
-

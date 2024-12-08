@@ -1,3 +1,4 @@
+
 import { NextResponse } from 'next/server'
 import sharp from 'sharp'
 import path from 'path'
@@ -22,4 +23,3 @@ export async function POST(request: Request) {
     return NextResponse.json({ error: 'Error processing image' }, { status: 500 })
   }
 }
-

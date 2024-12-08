@@ -1,3 +1,4 @@
+
 import Image from 'next/image'
 import { DownloadButton } from '@/components/download-button'
 
@@ -20,4 +21,3 @@ export default function ResultPage({ params }: { params: { id: string } }) {
     </div>
   )
 }
-

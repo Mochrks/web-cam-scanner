@@ -1,4 +1,4 @@
-'use client'
+"use client"
 
 import { useState } from "react"
 import { useRouter } from "next/navigation"
@@ -17,7 +17,7 @@ export function UploadDropzone() {
     setFile(acceptedFiles[0])
   }
 
-  const { getRootProps, getInputProps, isDragActive } = useDropzone({ onDrop, accept: {'image/*': []} })
+  const { getRootProps, getInputProps, isDragActive } = useDropzone({ onDrop, accept: { 'image/*': [] } })
 
   const handleUpload = async () => {
     if (!file) return
@@ -64,9 +64,8 @@ export function UploadDropzone() {
     <div className="max-w-xl mx-auto">
       <div
         {...getRootProps()}
-        className={`border-2 border-dashed rounded-lg p-10 text-center cursor-pointer transition-colors ${
-          isDragActive ? "border-primary bg-primary/10" : "border-muted-foreground"
-        }`}
+        className={`border-2 border-dashed rounded-lg p-10 text-center cursor-pointer transition-colors ${isDragActive ? "border-primary bg-primary/10" : "border-muted-foreground"
+          }`}
       >
         <input {...getInputProps()} />
         {file ? (
@@ -100,4 +99,3 @@ export function UploadDropzone() {
     </div>
   )
 }
-
