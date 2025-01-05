@@ -2,6 +2,7 @@ import Link from "next/link"
 import { ScanIcon } from 'lucide-react'
 
 export function Footer() {
+  const getFullyears = new Date().getFullYear();
   return (
     <footer className="bg-background border-t">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-8">
@@ -12,7 +13,7 @@ export function Footer() {
             <span className="font-semibold">Web CamScanner</span>
           </Link>
           <p className="mt-2 text-center md:text-left text-base text-gray-400">
-            © {getFullyears} Web CamScanner. All rights reserved. <a
+            &copy; {new Date().getFullYear()}Web CamScanner. All rights reserved. <a
               href="https://github.com/mochrks"
               target="_blank"
               rel="noopener noreferrer"
