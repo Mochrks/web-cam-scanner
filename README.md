@@ -1,4 +1,4 @@
-<h1 align="center">Web CamScanner</h1>
+<h1 align="center">Web CamScanners</h1>
 
 <p align="center">
   <img src="https://img.shields.io/badge/Next.js-13-black" alt="Next.js Version" />
