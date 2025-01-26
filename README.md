@@ -12,7 +12,7 @@
 
 ## Overview
 
-**Web CamScanner** is an innovative web applications that transform your browser into a powerful documents scanning and processing tools. Leveraging modern web technologies and machine learning, this app provides high-quality document digitization with advanced image enhancement features.
+**Web CamScanner** is an innovative web applications that transform your browser into a powerful document scanning and processing tools. Leveraging modern web technologies and machine learning, this app provides high-quality document digitization with advanced image enhancement features.
 
 ## Features
 
