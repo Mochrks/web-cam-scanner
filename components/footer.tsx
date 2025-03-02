@@ -2,7 +2,6 @@ import Link from "next/link"
 import { ScanIcon } from 'lucide-react'
 
 export function Footer() {
-  const getFullyears = new Date().getFullYear();
   return (
     <footer className="bg-background border-t">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-8">

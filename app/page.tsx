@@ -9,7 +9,7 @@ export default function Home() {
           <span className="block text-primary">Into Perfect Scans</span>
         </h1>
         <p className="mt-3 max-w-md mx-auto text-base text-muted-foreground sm:text-lg md:mt-5 md:text-xl md:max-w-3xl">
-          Web CamScanner turns your smartphone into a powerful scanner. Capture, enhance, and share your documents with ease.
+          Web CamScanner turns your images into a powerful scanner. Capture, enhance, and share your documents with ease.
         </p>
 
       </div>
